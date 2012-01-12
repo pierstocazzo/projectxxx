@@ -9,8 +9,9 @@ public class Acount {
 	private String surName;
 	private Calendar birtDate;
 	private String birthPlace;
-	private Date joinDate;
+	private final Date joinDate;
 	private char sex;
+	private String email;
 	
 	public Acount() {
 		joinDate = Calendar.getInstance().getTime();
@@ -54,7 +55,14 @@ public class Acount {
 	public char getSex() {
 		return this.sex;
 	}
-	
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+
 	// Setters
 	/**
 	 * @param name the name to set
@@ -85,6 +93,12 @@ public class Acount {
 	 */
 	public void setSex(char sex) {
 		this.sex = sex;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String emailAddress) {
+		this.email = emailAddress;
 	}
 	
 }
