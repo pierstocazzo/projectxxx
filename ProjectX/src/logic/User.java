@@ -8,12 +8,12 @@ import chatbox.Ban;
 
 public class User {
 	
-	public enum Role {
+	/*public enum Role {
 		OWNER, MODERATOR, CLIENT;
-	}
+	}*/
 	
 	private final int userID;
-	private Role r;
+	//private Role r;
 	private Acount acountInfo;
 	private String userName;
 	private char[] password;
@@ -22,7 +22,7 @@ public class User {
 	
 	protected User() {
 		userID = users.size() + 1;
-		this.setRole( Role.CLIENT );
+		//this.setRole( Role.CLIENT );
 		password = new char[20];
 		bans = new ArrayList<Ban>();
 		users.add(this);
@@ -42,9 +42,9 @@ public class User {
 	/**
 	 * @return the r
 	 */
-	public Role getRole() {
+	/*public Role getRole() {
 		return r;
-	}
+	}*/
 	/**
 	 * @return the data
 	 */
@@ -95,9 +95,9 @@ public class User {
 	/**
 	 * @param role the r to set
 	 */
-	public void setRole(Role role) {
+	/*public void setRole(Role role) {
 		this.r = role;
-	}
+	}*/
 	/**
 	 * @param data the data to set
 	 */

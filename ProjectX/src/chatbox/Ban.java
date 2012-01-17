@@ -2,14 +2,16 @@ package chatbox;
 
 import java.util.Date;
 
-public class Ban {
+import logic.User;
+
+public class Ban extends Message {
 	
-	private String reason;
 	private Channel channel;
 	private int duration;
 	private final Date banDate;
 	
-	public Ban( Channel ch, String reason, Date d, int duration ) {
+	public Ban( User mod, Channel ch, String reason, Date d, int duration ) {
+		super(mod, reason);
 		this.banDate = d;
 	}
 
@@ -17,7 +19,7 @@ public class Ban {
 	 * @return the reason
 	 */
 	public String getReason() {
-		return reason;
+		return this.getComment();
 	}
 	/**
 	 * @return the channel
@@ -43,7 +45,7 @@ public class Ban {
 	 * @param reason the reason to set
 	 */
 	public void setReason(String reason) {
-		this.reason = reason;
+		this.setComment(reason);
 	}
 	/**
 	 * @param channel the channel to set
