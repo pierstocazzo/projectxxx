@@ -19,6 +19,7 @@ public class User {
 	private char[] password;
 	private static List<User> users = new ArrayList<User>();
 	private List<Ban> bans;
+	private String email;
 	
 	protected User() {
 		userID = users.size() + 1;
@@ -76,6 +77,12 @@ public class User {
 		return User.users;
 	}
 	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/**
 	 * Returns a User with the given user name
 	 * @param username
 	 * @return
@@ -128,6 +135,12 @@ public class User {
 	 */
 	public static void setUsers(List<User> users) {
 		User.users = users;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String emailAddress) {
+		this.email = emailAddress;
 	}
 	
 	
