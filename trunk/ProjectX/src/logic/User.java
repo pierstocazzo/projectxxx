@@ -14,7 +14,7 @@ public class User {
 	
 	private final int userID;
 	//private Role r;
-	private Acount acountInfo;
+	private Account acountInfo;
 	private String userName;
 	private char[] password;
 	private static List<User> users = new ArrayList<User>();
@@ -49,7 +49,7 @@ public class User {
 	/**
 	 * @return the data
 	 */
-	public Acount getAcountInfo() {
+	public Account getAcountInfo() {
 		return acountInfo;
 	}
 	/**
@@ -108,7 +108,7 @@ public class User {
 	/**
 	 * @param data the data to set
 	 */
-	public void setAcountInfo(Acount acountInfo) {
+	public void setAcountInfo(Account acountInfo) {
 		this.acountInfo = acountInfo;
 	}
 	/**
