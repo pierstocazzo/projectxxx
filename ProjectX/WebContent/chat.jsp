@@ -1,6 +1,6 @@
 <%@ page session="true" import="be.belgium.eid.eidlib.*,
-								be.belgium.eid.exceptions.EIDException,
-								be.belgium.eid.objects.IDData"
+								be.belgium.eid.exceptions.*,
+								be.belgium.eid.objects.*"
 								errorPage="error.jsp"%>
 <%
 String nickname = (String)session.getAttribute("nickname");
@@ -42,6 +42,24 @@ if (nickname != null && nickname.length() > 0)
 }
 else
 {
+	//Try to read from BeID.
+	BeID testID = new BeID(false);
+	IDData iDData;
+	
+	String fname = null;
+	String lname = null;
+	
+	try
+	{
+		iDData = testID.getIDData();
+		fname = iDData.get1stFirstname();
+		lname = iDData.getName();
+	} catch (EIDException e1)
+	{
+		e1.printStackTrace();
+	}
+	
+	
 	%>
 	<html>
 		<head>
@@ -64,7 +82,7 @@ else
 					</ul>
 				</div>
 				<div id="content">
-				
+					<p>TEST: <%=fname%> <%=lname%></p>			
 					<p>Insert your electronic ID cart in order to participate in the chatroom.</p>
 		
 				</div>
