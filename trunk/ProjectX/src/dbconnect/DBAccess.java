@@ -16,6 +16,7 @@ public class DBAccess {
 		
 		catch (SQLException e) {
 			System.err.println(e);
+			e.printStackTrace();
 		}
 	}
 	public void execute (String queryText) {
