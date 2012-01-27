@@ -2,6 +2,7 @@ package logic;
 
 import java.util.*;
 
+
 import chatbox.Ban;
 
 
@@ -21,7 +22,7 @@ public class User {
 	private List<Ban> bans;
 	private String email;
 	
-	protected User() {
+	public User() {
 		userID = users.size() + 1;
 		//this.setRole( Role.CLIENT );
 		password = new char[20];
