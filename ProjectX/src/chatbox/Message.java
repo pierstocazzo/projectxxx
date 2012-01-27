@@ -3,6 +3,8 @@
  */
 package chatbox;
 
+import java.sql.Timestamp;
+
 import logic.User;
 
 /**
@@ -14,7 +16,7 @@ public class Message {
 	private User sender;
 	private String comment;
 	private User receiver = null;
-	private long timeStamp;
+	private Timestamp timeStamp;
 	
 	public Message() {
 		
@@ -47,7 +49,7 @@ public class Message {
 	/**
 	 * @return the timeStamp
 	 */
-	public long getTimeStamp() {
+	public Timestamp getTimeStamp() {
 		return timeStamp;
 	}
 	

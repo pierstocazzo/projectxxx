@@ -8,7 +8,7 @@ public class Account {
 	
 	private String firstName;
 	private String lastName;
-	private Calendar birthDate;
+	private Date birthDate;
 	private String birthPlace;
 	private final Date joinDate;
 	private char sex;
@@ -24,19 +24,19 @@ public class Account {
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	public String getFirstName() {
 		return firstName;
 	}
 	/**
 	 * @return the surName
 	 */
-	public String getSurName() {
+	public String getLastName() {
 		return lastName;
 	}
 	/**
 	 * @return the birtDate
 	 */
-	public Calendar getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 	/**
@@ -63,20 +63,20 @@ public class Account {
 	/**
 	 * @param name the name to set
 	 */
-	public void setName(String name) {
-		this.firstName = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	/**
 	 * @param surName the surName to set
 	 */
-	public void setSurName(String surName) {
-		this.lastName = surName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	/**
 	 * @param birtDate the birtDate to set
 	 */
-	public void setBirtDate(Calendar birtDate) {
-		this.birthDate = birtDate;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 	/**
 	 * @param birthPlace the birthPlace to set
