@@ -1,5 +1,6 @@
 package logic;
 
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,6 +16,7 @@ public class Account {
 	
 	public Account() {
 		joinDate = Calendar.getInstance().getTime();
+		
 	}
 
 
