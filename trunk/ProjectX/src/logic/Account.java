@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Account {
 	
+	
 	private String firstName;
 	private String lastName;
 	private Date birthDate;
@@ -90,5 +91,6 @@ public class Account {
 	public void setSex(char sex) {
 		this.sex = sex;
 	}
-	
+
+
 }

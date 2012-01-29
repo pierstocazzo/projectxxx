@@ -23,8 +23,8 @@ public class AddUser {
 	public static void addUserToDB(User u) {
 		DBAccess db = new DBAccess("jdbc:mysql://78.23.248.36:3306/projectx","maxime","chatboxsql");
 		
-		String queryText 	= "INSERT INTO PROJECTX.USERS (USERNAME, PASSWORD, EMAIL) "
-							+ "VALUES('" + u.getUserName() +"','" + convertPassword(u) + "','" + u.getEmail() + "')";
+		String queryText 	= "INSERT INTO PROJECTX.USERS (USERID,USERNAME,PASSWORD,EMAIL) "
+							+ "VALUES('" + u.getUserID() +"','" + u.getUserName() +"','" + convertPassword(u) + "','" + u.getEmail() + "')";
 		
 		db.execute(queryText);
 		db.closeConnection();
