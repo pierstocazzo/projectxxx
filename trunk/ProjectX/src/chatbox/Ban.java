@@ -1,7 +1,6 @@
 package chatbox;
 
 import java.util.Date;
-
 import logic.User;
 
 public class Ban extends Message {
