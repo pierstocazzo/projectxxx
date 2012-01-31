@@ -40,7 +40,6 @@ public class UserHandler {
 	         encpwd = new String(sha.digest());
 	      }
 	      catch( java.security.NoSuchAlgorithmException e ) {
-	         System.out.println( "Rats, MD5 doesn't exist" );
 	         System.out.println( e.toString() );
 	      }
 		
@@ -53,22 +52,25 @@ public class UserHandler {
 	
 	public User changePassword( String username, char[] password ) {
 		User u = User.getUser(username);
-		if( u != null ) {
+		if( (u != null) && (!this.equalsPassword(u, password))  ) {
 			u.setPassword(this.encryptedPassword(password));
 		}
 		return u;
 	}
 	
 	public User register( String username, char[] password, String email  ) {
-		User u = new User(username);
-		u.setPassword(this.encryptedPassword(password));
+		User u = null;
+		if( username != null && username.length() >= 3 )
+			u = new User(username);
+		if( password != null && password.length >= 6 )
+			u.setPassword(this.encryptedPassword(password));
 		u.setEmail(email);
 		return u;
 	}
 	
 	public User ban( String username, Ban b ) {
 		User u = User.getUser(username);
-		if( u != null ) {
+		if( u != null && b != null ) {
 			u.getBans().add(b);
 		}
 		return u;
