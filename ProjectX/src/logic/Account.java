@@ -16,10 +16,13 @@ public class Account {
 	
 	
 	public Account() {
-		joinDate = Calendar.getInstance().getTime();
-		
+		joinDate = Calendar.getInstance().getTime();		
 	}
-
+	
+	public Account(Date date) {
+		this.joinDate = date;
+	}
+	
 
 	// Getters
 	/**

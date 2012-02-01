@@ -8,10 +8,12 @@ public class Ban extends Message {
 	private Channel channel;
 	private int duration;
 	private final Date banDate;
+	private Date endDate;
 	
-	public Ban( User mod, Channel ch, String reason, Date d, int duration ) {
+	public Ban( User mod, Channel ch, String reason, Date d,  int duration) {
 		super(mod, reason);
 		this.banDate = d;
+		this.duration = duration;
 	}
 
 	/**
@@ -59,5 +61,11 @@ public class Ban extends Message {
 		this.duration = duration;
 	}
 	
+	public Date getEndDate() {
+		return new Date();
+	}
 	
+	public void setEndDate (Date d ) {
+		
+	}
 }
