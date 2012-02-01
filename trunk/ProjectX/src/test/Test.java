@@ -1,27 +1,35 @@
 package test;
 
 
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import logic.Account;
 import logic.User;
 import dbconnect.orm.AddAccount;
+import dbconnect.orm.AddUser;
 
 
 @SuppressWarnings("unused")
 public class Test {
 	
 	public static void main (String[] args) {
-		/*{	char [] password = {'s','e','u','t'}; 
+		{	
+			
+			char [] password = {'s','e','u','t'}; 
 			User u = new User();
+			
 			u.setUserName("Stoutmeisje69");
 			u.setPassword(password);
 			u.setEmail("xxxkonijntje@hotmail.com");
+			System.out.println(u.getUserID());
 			AddUser.addUserToDB(u);
-		}*/  
+			
+			
+			
 		
-		{
-			Account a = new Account();
+		
+			/*Account a = new Account();
 			a.setFirstName("Marie-Jeanne");
 			a.setLastName("Vankappellen");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -36,7 +44,7 @@ public class Test {
 
 			a.setBirthPlace("Reet");
 			a.setSex('F');
-			AddAccount.addAccountToDB(a);
+			AddAccount.addAccountToDB(a,u);*/
 		}
 }
 }

@@ -33,6 +33,14 @@ public class User {
 		this();
 		this.setUserName(userName);
 	}
+	
+	public User (String userName, int userID) {
+		this.userID = userID;
+		this.userName = userName;
+		password = new char[20];
+		bans = new ArrayList<Ban>();
+	}
+	
 
 	// Getters
 	/**
@@ -106,6 +114,8 @@ public class User {
 	/*public void setRole(Role role) {
 		this.r = role;
 	}*/
+	
+	
 	/**
 	 * @param data the data to set
 	 */

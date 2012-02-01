@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBAccess {
 	protected Connection con;
 	protected Statement stat;
-	
+	protected ResultSet rs;
 	
 	public DBAccess(String url, String user, String password) {
 		
@@ -29,6 +29,17 @@ public class DBAccess {
 			}
 		}
 	}
+	
+	public ResultSet executeQuery(String queryText) {
+		try {
+			rs = stat.executeQuery(queryText);
+		}
+		catch (SQLException e) {
+			System.err.println(e);
+		}
+		return rs;
+	}
+	
 	
 	public void closeConnection () {
 		try {

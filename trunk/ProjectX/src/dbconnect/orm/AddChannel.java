@@ -21,11 +21,11 @@ public class AddChannel {
 	
 	public static void AddChannelToDB (Channel c) {
 		DBAccess db = new DBAccess("jdbc:mysql://78.23.248.36:3306/projectx","maxime","chatboxsql");
-		User u = c.getOwner();
 		
-		String queryText	=	"INSERT INTO PROJECTX.ACCOUNTS(CHANNELNAME,DESCRIPTION,PIRVATECHANNEL,PASSWORD,OWNER) "
+		
+		String queryText	=	"INSERT INTO PROJECTX.CHANNELS(CHANNELNAME,DESCRIPTION,PIRVATECHANNEL,PASSWORD,OWNER) "
 				+ "VALUES('" + c.getChannelName() + "','" + c.getDescription() + "','" + c.isPrivateChannel() + "','" 
-				+ convertPassword(c) + "','" + u.getUserID() + "')"; 
+				+ convertPassword(c) + "','" + c.getOwner().getUserID() + "')"; 
 		
 		db.execute(queryText);
 		db.closeConnection();
