@@ -1,0 +1,40 @@
+﻿#main {width:1280px; margin:0 auto;}
+#main .bg { background-image:url(file:///C|/Users/Administrator/Documents/Java%20Chatit%20Website/images/background6.jpg);
+alignment-adjust:central;}
+
+#header {height:250px;}
+#menu {height: 80px;}
+
+#header, #content, #footer { font-size:1em; text-transform:uppercase;}
+
+.col-1, .col-2 { float:left;}
+
+/*======= index.html =======*/
+#page1 #content .col-1 {width:450px; margin-right:53px;}
+#page1 #content .col-2 {width:550px;}
+
+/*======= index2.html =======*/
+#page2 #content .col-1 {width:450px; margin-right:53px;}
+#page2 #content .col-2 {width:550px;}
+
+/*======= index3.html =======*/
+#page3 #content .col-1 {width:450px; margin-right:53px;}
+#page3 #content .col-2 {width:550px;}
+
+/*======= index4.html =======*/
+#page4 #content .col-1 {width:450px; margin-right:53px;}
+#page4 #content .col-2 {width:550px;}
+
+/*======= index5.html =======*/
+#page5 #content .col-1 {width:450px; margin-right:53px;}
+#page5 #content .col-2 {width:550px;}
+
+/*======= index6.html =======*/
+#page6 #content .col-1 {width:450px; margin-right:53px;}
+#page6 #content .col-2 {width:550px;}
+
+/*=========================*/
+
+
+#footer {height:61px;}
+
