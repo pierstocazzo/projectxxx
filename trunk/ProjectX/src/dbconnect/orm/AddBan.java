@@ -19,8 +19,9 @@ public class AddBan {
 		
 		endDateFormat = df.format(b.getEndDate());
 		banDateFormat = df.format(b.getBanDate());
-		String queryText	=	"INSERT INTO PROJECTX.BANS(CHANNELNAME,ENDDATE,BANDATE,USERNAME,MODERATOR) "
-				+ "VALUES('" + c.getChannelName() + "','" + endDateFormat + "','" + banDateFormat + "','" + u.getUserName() + "','" + b.getSender().getUserID() + "')"; 
+		String queryText	=	"INSERT INTO PROJECTX.BANS(CHANNELNAME,ENDDATE,BANDATE,USERNAME,MODERATOR,REASON) "
+				+ "VALUES('" + c.getChannelName() + "','" + endDateFormat + "','" + banDateFormat + "','" + u.getUserName() + "','" 
+				+ b.getSender().getUserID() + "','" + b.getReason() + "')"; 
 		
 		db.execute(queryText);
 		db.closeConnection();
