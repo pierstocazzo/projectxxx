@@ -40,24 +40,17 @@ public class GetAllUsers  {
 				u.setAcountInfo(a);
 				u.setBans(getAllBansFromDB(u,channels));
 				users.add(u);
-				
-								
 			}
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally {
-			try  {
-				db.closeConnection();
-			}
-			catch (Exception e) {}
+			db.closeConnection();
+		
+		}		
+		return users;	
 		}
-		
-		
-		return users;
-		
-	}
 	
 	public static List<Ban> getAllBansFromDB(User u, List<Channel> c) {
 		DBAccess db = new DBAccess("jdbc:mysql://78.23.248.36:3306/projectx","maxime","chatboxsql");
@@ -65,7 +58,6 @@ public class GetAllUsers  {
 		String queryText = ("SELECT * FROM BANS INNER JOIN USERS" +
 							" ON BANS.MODERATOR=USERS.USERID WHERE BANS.USERID='" + u.getUserID() + "'");
 		List<Ban> bans = new ArrayList<Ban>();
-
 		ResultSet rs = db.executeQuery(queryText);
 		try {
 			while (rs.next()) {
@@ -79,7 +71,6 @@ public class GetAllUsers  {
 						break;
 					}
 				}
-				
 				Ban b = new Ban(u1, channel ,rs.getString("REASON"),rs.getDate("BANDATE")
 						,rs.getDate("ENDDATE"));
 				bans.add(b);
@@ -93,6 +84,32 @@ public class GetAllUsers  {
 	}
 	
 	public static List<Channel> getAllChannelsFromDB() {
+		DBAccess db = new DBAccess("jdbc:mysql://78.23.248.36:3306/projectx","maxime","chatboxsql");
+		String queryText = ("SELECT * FROM CHANNELS INNER JOIN USERS" + 
+							" ON CHANNELS.CHANNELOWNER=USERS.USERID");
+		ResultSet rs = db.executeQuery(queryText);
+		
+		try {
+			while (rs.next()) {
+				User u1 = new User(rs.getString("USERNAME"),rs.getInt("USERS.USERID"));
+				u1.setPassword(rs.getString("PASSWORD").toCharArray());
+				u1.setEmail(rs.getString("EMAIL"));
+				Channel c = new Channel();
+				c.setOwner(u1);
+				c.setChannelName(rs.getString("CHANNELS"));
+				c.setDescription(rs.getString("DESCRIPTION"));
+				c.setPrivateChannel(rs.getBoolean("CHANNELPRIVATE"));
+				c.setPassword(rs.getString("PASSWORD").toCharArray());
+				channels.add(c);
+			}
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			db.closeConnection();
+		
+		}		
 		return channels;
 		
 	}
