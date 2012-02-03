@@ -1,6 +1,6 @@
 package dbconnect.orm;
 
-import logic.User;
+
 import chatbox.Channel;
 import dbconnect.DBAccess;
 

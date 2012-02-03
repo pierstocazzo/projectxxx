@@ -21,7 +21,7 @@ public class Channel {
 	private char[] password;
 	private User owner;
 
-	protected Channel() {
+	public Channel() {
 		moderators = new TreeSet<User>();
 		members = new TreeSet<User>();
 		password = new char[20];
