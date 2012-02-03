@@ -15,7 +15,11 @@ public class Ban extends Message {
 		this.banDate = d;
 		this.duration = duration;
 	}
-
+	public Ban( User mod, Channel ch, String reason, Date d, Date endDate) {
+		super(mod, reason);
+		this.banDate = d;
+		this.endDate = endDate;
+	}
 	/**
 	 * @return the reason
 	 */

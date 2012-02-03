@@ -8,6 +8,7 @@ import logic.Account;
 import logic.User;
 import dbconnect.orm.AddAccount;
 import dbconnect.orm.AddUser;
+import dbconnect.read.initial.GetAllUsers;
 
 
 @SuppressWarnings("unused")
@@ -16,15 +17,15 @@ public class Test {
 	public static void main (String[] args) {
 		{	
 			
+			/*
 			char [] password = {'s','e','u','t'}; 
 			User u = new User();
-			
 			u.setUserName("Stoutmeisje69");
 			u.setPassword(password);
 			u.setEmail("xxxkonijntje@hotmail.com");
 			System.out.println(u.getUserID());
 			AddUser.addUserToDB(u);
-			
+			/*
 			
 			
 		
@@ -45,6 +46,9 @@ public class Test {
 			a.setBirthPlace("Reet");
 			a.setSex('F');
 			AddAccount.addAccountToDB(a,u);*/
+			User.setUsers(GetAllUsers.getAllUsersFromDB());
+			System.out.println(User.getUsers().get(0).getAcountInfo().getBirthDate());
+			
 		}
 }
 }

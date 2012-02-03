@@ -17,6 +17,7 @@ public class Channel {
 	private boolean privateChannel;
 	private Set<User> moderators;
 	private Set<User> members;
+	private static List<Channel> channels;
 	private char[] password;
 	private User owner;
 
@@ -154,6 +155,14 @@ public class Channel {
 	public User removeModerator(User u) {
 		this.getModerators().remove(u);
 		return u;
+	}
+
+	public static List<Channel> getChannels() {
+		return channels;
+	}
+
+	public static void setChannels(List<Channel> channels) {
+		Channel.channels = channels;
 	}
 
 }
